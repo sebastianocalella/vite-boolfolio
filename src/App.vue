@@ -1,10 +1,10 @@
 <script>
-    import HomeComponent from './components/HomeComponent.vue';
+    import AppHeader from './components/AppHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    HomeComponent,
+    AppHeader,
   },
   data() {
     return {
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <HomeComponent/>
+  <AppHeader/>
 
 </template>
 
