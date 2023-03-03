@@ -1,9 +1,15 @@
 <template lang="">
-    <div>
-        <h2>
-            Projects List page
-        </h2>
-        <ProjectsComponent :projectsList="projects"/>
+    <div class=container>
+        <div class="row justify-content-around align-items-center">
+            <div class="col-8">
+                <h2 class="my-5">Projects:</h2>
+            </div>
+            <div class="col-3">
+                <button @click="this.previousPage" class="btn btn-primary me-3">previous page</button>
+                <button @click="this.nextPage" class="btn btn-primary">next page</button>
+            </div>
+            <ProjectsComponent :projectsList="projects"/>
+        </div>
     </div>
 </template>
 <script>
@@ -37,6 +43,24 @@ export default {
             .catch(function (error) {
                 console.warn(error);
             });
+        },
+
+        nextPage(){
+            if (this.currentPage == this.lastPage) {
+                this.currentPage = 1
+            } else{
+                this.currentPage+=1
+            }
+            this.getProjects()
+        },
+
+        previousPage(){
+            if (this.currentPage == 1) {
+                this.currentPage = this.lastPage
+            } else{
+                this.currentPage-=1
+            }
+            this.getProjects()
         }
     },
     created() {

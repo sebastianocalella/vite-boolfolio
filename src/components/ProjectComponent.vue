@@ -7,7 +7,9 @@
             <span v-for="tecnology in projectElement.tecnologies" :style="'color: ' + tecnology.accent_color">{{ '<'+tecnology.name+'> '}} </span>
         </div>
         <div class="card-body">
-            <a href="#" class="btn btn-primary">Show more</a>
+            <router-link v-if="isShow" :to="{name: 'project', params: {slug: projectElement.slug}}" class="btn btn-primary">
+                Read more...
+            </router-link>
         </div>
     </div>
 </template>
@@ -19,7 +21,8 @@ import axios from 'axios';
 export default {
     name: 'ProjectComponent',
     props:{
-        projectElement: Array
+        projectElement: Object,
+        isShow: Boolean
     }
 }
 </script>
