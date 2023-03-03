@@ -8,13 +8,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <router-link class="nav-link" :to="{name: 'projects'}">Projects</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <router-link class="nav-link" :to="{name: 'about-us'}">About Us</router-link>
                     </li>
                 </ul>
             </div>
