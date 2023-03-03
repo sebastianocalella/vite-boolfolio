@@ -8,7 +8,7 @@
                 <!-- <button @click="this.previousPage" class="btn btn-primary me-3">previous page</button>
                 <button @click="this.nextPage" class="btn btn-primary">next page</button> -->
             </div>
-            <div  class="p-0 row mb-5">
+            <div  class="p-0 row justify-content-between">
                 <ProjectComponent v-for="project in projectsList" :projectElement="project" class="col-5"/>
             </div>
             <!-- <div v-for="project in projects" class="card p-0 col-5 mb-5">

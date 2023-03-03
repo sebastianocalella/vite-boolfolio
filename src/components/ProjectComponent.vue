@@ -1,5 +1,5 @@
 <template lang="">
-    <div>
+    <div class="card p-0 mb-5">
         <img class="card-img-top" :src="projectElement.image_path" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ projectElement.title }} -- <span class="text-secondary">{{ projectElement.type.name }}</span></h5>
