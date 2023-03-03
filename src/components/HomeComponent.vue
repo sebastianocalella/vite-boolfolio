@@ -19,6 +19,10 @@
                     <a href="#" class="btn btn-primary">Show more</a>
                 </div>
             </div>
+            <div class="col-3 offset-8 mb-5">
+                <button @click="this.previousPage" class="btn btn-primary me-3">previous page</button>
+                <button @click="this.nextPage" class="btn btn-primary">next page</button>
+            </div>
         </div>
 
     </div>
