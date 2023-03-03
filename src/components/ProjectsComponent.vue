@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div  class="p-0 row justify-content-between">
-            <ProjectComponent v-for="project in projectsList" :projectElement="project" :isShow="true" class="col-5"/>
+            <ProjectComponent v-for="(project, index) in projectsList" :projectElement="project" :isShow="true" class="col-5"/>
         </div>
     </div>
 </template>
@@ -28,6 +28,9 @@ export default {
             lastPage: 0
         }
     },
+    created(){
+
+    }
 }
 </script>
 <style lang="scss" scoped></style>

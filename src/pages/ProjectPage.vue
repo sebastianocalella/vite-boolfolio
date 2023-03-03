@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <ProjectComponent />
+        <ProjectComponent :projectElement="project" @send-project-index="getProject"/>
     </div>
 </template>
 
@@ -15,28 +15,28 @@ export default {
     },
     data() {
         return {
-            post: null,
+            poroject: null,
             loading: false,
             urlAddress: 'http://127.0.0.1:8000',
         }
     },
     methods: {
-        getProject(){
-            axios.get(this.urlAddress + `/api/projects/${this.$route.params.slug}`, {
+        getProject(value){
+            axios.get(this.urlAddress + '/api/projects/', {
                 params: {
                 }
             })
             .then((response) => {
-                this.project = response.data.results;
+                this.project = response.data.results.data[value];
                 console.warn(response);
             })
             .catch(function (error) {
                 console.warn(error);
             });
-        }
+        },
     },
     created() {
-        this.getProject();
+        //this.getProject();
     },
 }
 </script>

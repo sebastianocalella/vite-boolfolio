@@ -3,20 +3,17 @@
         <img class="card-img-top" :src="projectElement.image_path" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ projectElement.title }} -- <span class="text-secondary">{{ projectElement.type.name }}</span></h5>
-            <p class="card-text">{{ projectElement.description.substr(0,250) }}...</p>
+            <p v-if="isShow" class="card-text">{{ projectElement.description.substr(0,250) }}...</p>
             <span v-for="tecnology in projectElement.tecnologies" :style="'color: ' + tecnology.accent_color">{{ '<'+tecnology.name+'> '}} </span>
         </div>
         <div class="card-body">
-            <router-link v-if="isShow" :to="{name: 'project', params: {slug: projectElement.slug}}" class="btn btn-primary">
+            <router-link v-if="isShow" :to="{name: 'project', params: {slug: projectElement.slug}}" @click="$emit('send-project-index', index)" class="btn btn-primary">
                 Read more...
             </router-link>
         </div>
     </div>
 </template>
 <script>
-
-import ProjectComponent from '../components/ProjectComponent.vue';
-import axios from 'axios';
 
 export default {
     name: 'ProjectComponent',
