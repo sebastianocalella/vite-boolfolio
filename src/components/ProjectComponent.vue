@@ -7,7 +7,7 @@
             <span v-for="tecnology in projectElement.tecnologies" :style="'color: ' + tecnology.accent_color">{{ '<'+tecnology.name+'> '}} </span>
         </div>
         <div class="card-body">
-            <router-link v-if="isShow" :to="{name: 'project', params: {slug: projectElement.slug}}" @click="$emit('send-project-index', index)" class="btn btn-primary">
+            <router-link v-if="isShow" :to="{name: 'project', params: {slug: projectElement.slug}}" class="btn btn-primary">
                 Read more...
             </router-link>
         </div>
