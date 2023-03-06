@@ -1,6 +1,7 @@
 <template lang="">
     <div>
-        <ProjectComponent :projectElement="project"/>
+
+        <ProjectComponent v-if="project" :projectElement="project"/>
     </div>
 </template>
 
@@ -15,7 +16,7 @@ export default {
     },
     data() {
         return {
-            poroject: null,
+            project: null,
             loading: false,
             urlAddress: 'http://127.0.0.1:8000',
         }
