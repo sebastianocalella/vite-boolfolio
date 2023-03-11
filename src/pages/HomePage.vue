@@ -1,13 +1,17 @@
 <template lang="">
-    <div>
-        <h2>
-            Home Page
-        </h2>
+    <div class="container-fluid">
+        <HomeComponent />
     </div>
 </template>
 <script>
+
+import HomeComponent from '../components/HomeComponent.vue'
+
 export default {
-    name: 'Hompage'
+    name: 'Hompage',
+    components:{
+        HomeComponent
+    }
 }
 </script>
 <style lang="scss">

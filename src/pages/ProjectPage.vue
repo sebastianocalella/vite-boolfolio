@@ -1,5 +1,5 @@
 <template lang="">
-    <div>
+    <div class="container pt-5">
 
         <ProjectComponent v-if="project" :projectElement="project"/>
     </div>
